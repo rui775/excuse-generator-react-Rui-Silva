@@ -1,12 +1,62 @@
+h1, h3 {
+    margin-top: 100px;
+}
 
-/* 
+h3 {
+    color: rgb(3, 105, 105);
+    font-family: Verdana;
+}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+h1 {
+    color: rgb(0, 168, 168);
+    font-family: 'Arial Narrow';
+}
 
-*/
+.btn3d {
+	position: relative;
+	top: -6px;
+	border: 0;
+	transition: all 40ms linear;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+.btn3d:active,
+.btn3d.active {
+	top: 2px;
+}
+.btn3d.btn-white {
+	color: #666666;
+	box-shadow: 0 0 0 1px #ebebeb inset, 0 0 0 2px rgba(255, 255, 255, 0.10) inset, 0 8px 0 0 #f5f5f5, 0 8px 8px 1px rgba(0, 0, 0, .2);
+	background-color: #fff;
+}
+.btn3d.btn-white:active,
+.btn3d.btn-white.active {
+	color: #666666;
+	box-shadow: 0 0 0 1px #ebebeb inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset, 0 1px 3px 1px rgba(0, 0, 0, .1);
+	background-color: #fff;
+}
+.btn3d.btn-default {
+	color: #666666;
+	box-shadow: 0 0 0 1px #ebebeb inset, 0 0 0 2px rgba(255, 255, 255, 0.10) inset, 0 8px 0 0 #BEBEBE, 0 8px 8px 1px rgba(0, 0, 0, .2);
+	background-color: #f9f9f9;
+}
+.btn3d.btn-default:active,
+.btn3d.btn-default.active {
+	color: #666666;
+	box-shadow: 0 0 0 1px #ebebeb inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset, 0 1px 3px 1px rgba(0, 0, 0, .1);
+	background-color: #f9f9f9;
+}
+.btn3d.btn-primary {
+	color: #113343;
+	box-shadow: 0 0 0 1px #E6982E inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 3px 0 0 #BA8741, 0 3px 3px 1px rgba(0, 0, 0, 0.5);
+	background-color: #f8ba1c;
+}
+.btn3d.btn-primary:active,
+.btn3d.btn-primary.active {
+	color: #113343;
+	box-shadow: 0 0 0 1px #e698ce inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset, 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+	background-color: #f8ba1c;
+}

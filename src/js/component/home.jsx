@@ -1,24 +1,25 @@
 import React from "react";
+import { useState } from "react";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+import Button from "./button.jsx"
+
+import ExcuseGenerator from "./generator.jsx";
 
 //create your first component
 const Home = () => {
+
+	let [phrase, setCounter] = useState("Show me an excuse!");
+
+	const generetate = () => {
+		phrase = <ExcuseGenerator/>;
+		setCounter(phrase);
+	}
+
 	return (
 		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+			<h1>Excuse Generator by Rui Silva</h1>
+			<h3 class="shadow p-3 mb-5 bg-body-tertiary rounded"><strong>{phrase}</strong></h3>
+			<Button title="Generate an excuse" click={generetate} />
 		</div>
 	);
 };
