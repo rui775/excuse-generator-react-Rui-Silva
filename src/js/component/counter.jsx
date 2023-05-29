@@ -9,7 +9,7 @@ const Counter = () => {
     useEffect(() => {
       const intervalCount = setInterval(() => {
         setCounter((counter) => counter + 1);
-      }, 120000);
+      }, 1000);
 
       return () => {clearInterval(intervalCount)};
       

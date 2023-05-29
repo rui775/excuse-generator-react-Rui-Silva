@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import Button from "./button.jsx";
 
 
 const ExcuseGenerator = () => {
@@ -16,35 +17,35 @@ const ExcuseGenerator = () => {
 
     let [excuse, setExcuse] = useState("Sorry, but...");
 
-    useEffect(() => {setInterval(() => {
-        setExcuse(
-          who[Math.floor(Math.random() * who.length)] +
-          " " +
-          action[Math.floor(Math.random() * action.length)] +
-          " " +
-          what[Math.floor(Math.random() * what.length)] +
-          " " +
-          when[Math.floor(Math.random() * when.length)]
-        );
-      }, 120000);
+    useEffect(() => {setInterval(generateExcuse, 10000);
 
     }, []);
 
-    // let [counter, setCounter] = useState(0);
+    let [counter, setCounter] = useState(0);
 
-    // useEffect(() => {
-    //   const intervalCount = setInterval(() => {
-    //     setCounter((counter) => counter + 1);
-    //   }, 120000);
-
-    //   return () => {clearInterval(intervalCount)};
+    useEffect(() => {
       
-    // }, []);
+      setCounter(counter + 1);
+      
+    }, [excuse]);
+
+    const generateExcuse = () => {
+      setExcuse(
+        who[Math.floor(Math.random() * who.length)] +
+        " " +
+        action[Math.floor(Math.random() * action.length)] +
+        " " +
+        what[Math.floor(Math.random() * what.length)] +
+        " " +
+        when[Math.floor(Math.random() * when.length)]
+      );
+    }
 
     return (
       <div>
         <h3 class="shadow p-3 mb-5 bg-body-tertiary rounded"><strong>{excuse}</strong></h3>
-        {/* <h4>Excuses counter: {counter} </h4> */}
+        <h4>Excuses counter: {counter} </h4>
+        <Button title="Generate an excuse" click={generateExcuse} />
       </div>
     )
   };
