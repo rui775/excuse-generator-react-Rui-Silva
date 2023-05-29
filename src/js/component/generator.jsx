@@ -17,18 +17,6 @@ const ExcuseGenerator = () => {
 
     let [excuse, setExcuse] = useState("Sorry, but...");
 
-    useEffect(() => {setInterval(generateExcuse, 10000);
-
-    }, []);
-
-    let [counter, setCounter] = useState(0);
-
-    useEffect(() => {
-      
-      setCounter(counter + 1);
-      
-    }, [excuse]);
-
     const generateExcuse = () => {
       setExcuse(
         who[Math.floor(Math.random() * who.length)] +
@@ -40,6 +28,18 @@ const ExcuseGenerator = () => {
         when[Math.floor(Math.random() * when.length)]
       );
     }
+
+    useEffect(() => {setInterval(generateExcuse, 10000);
+
+    }, []);
+
+    let [counter, setCounter] = useState(0);
+
+    useEffect(() => {
+      
+      setCounter(counter + 1);
+      
+    }, [excuse]);
 
     return (
       <div>
