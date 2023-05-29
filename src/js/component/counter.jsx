@@ -4,21 +4,19 @@ import { useState, useEffect } from "react";
 
 const Counter = () => {
     
-    let [currentTime, setCurrentTime] = useState(new Date());
     let [counter, setCounter] = useState(0);
 
     useEffect(() => {
-        setInterval(() => {
-            setCurrentTime(new Date());
-        }, 5000)
-    }, [])
+      const intervalCount = setInterval(() => {
+        setCounter((counter) => counter + 1);
+      }, 120000);
 
-    useEffect(() => {
-        setCounter(counter+1);
-    }, [currentTime])
+      return () => {clearInterval(intervalCount)};
+      
+    }, []);
 
     return (
-        <h3>{counter}</h3>
+        <h4>Excuses counter: <strong>{counter}</strong></h4>
     )
 }
 

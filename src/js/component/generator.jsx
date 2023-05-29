@@ -16,8 +16,7 @@ const ExcuseGenerator = () => {
 
     let [excuse, setExcuse] = useState("Sorry, but...");
 
-    useEffect(() => {
-      const interval = setInterval(() => {
+    useEffect(() => {setInterval(() => {
         setExcuse(
           who[Math.floor(Math.random() * who.length)] +
           " " +
@@ -31,21 +30,21 @@ const ExcuseGenerator = () => {
 
     }, []);
 
-    let [counter, setCounter] = useState(0);
+    // let [counter, setCounter] = useState(0);
 
-    useEffect(() => {
-      const intervalCount = setInterval(() => {
-        setCounter((counter) => counter + 1);
-      }, 120000);
+    // useEffect(() => {
+    //   const intervalCount = setInterval(() => {
+    //     setCounter((counter) => counter + 1);
+    //   }, 120000);
 
-      return () => {clearInterval(intervalCount)};
+    //   return () => {clearInterval(intervalCount)};
       
-    }, []);
+    // }, []);
 
     return (
       <div>
         <h3 class="shadow p-3 mb-5 bg-body-tertiary rounded"><strong>{excuse}</strong></h3>
-        <h4>Excuses counter: {counter} </h4>
+        {/* <h4>Excuses counter: {counter} </h4> */}
       </div>
     )
   };
